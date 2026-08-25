@@ -1,0 +1,106 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f1f4f9;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+/* ── Top Header Bar ── */
+.header {
+  height: 56px;
+  background: #ffffff;
+  border-bottom: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.8rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.breadcrumb a:hover { color: var(--accent); }
+
+.breadcrumb .crumbSep {
+  color: var(--text-muted);
+}
+
+.breadcrumb .crumbCurrent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Header right actions */
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.notifBtn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background var(--transition), border-color var(--transition);
+}
+.notifBtn:hover { background: var(--bg-secondary); border-color: var(--accent); }
+
+.notifDot {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 7px;
+  height: 7px;
+  background: #ef4444;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a56db, #0d2347);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px solid var(--border);
+  letter-spacing: 0.02em;
+}
+
+/* ── Page content area ── */
+.content {
+  flex: 1;
+  padding: 2rem 2.2rem;
+}

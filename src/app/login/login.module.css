@@ -1,0 +1,335 @@
+.loginWrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ─── LEFT PANEL ─────────────────────────────── */
+.leftPanel {
+  width: 42%;
+  background: var(--bg-left-panel);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle radial glow behind the panel */
+.leftPanel::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.logo {
+  margin-bottom: 0.5rem;
+}
+
+.logoText {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: -0.02em;
+}
+
+.logoSubtitle {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+  max-width: 240px;
+  margin-top: 0.35rem;
+}
+
+/* Visual card in the center */
+.visualCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.networkCard {
+  background: rgba(240, 244, 255, 0.92);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 340px;
+  padding: 2rem 1.5rem 1.5rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.networkSvgWrapper {
+  width: 100%;
+  height: 280px;
+}
+
+.networkSvgWrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cardLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #1a3a6b;
+  text-align: center;
+}
+
+/* SVG node animations */
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; r: 4px; }
+  50%       { opacity: 1;   r: 6px; }
+}
+@keyframes pulse2 {
+  0%, 100% { opacity: 0.4; r: 3px; }
+  50%       { opacity: 0.9; r: 5px; }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.2; }
+  50%       { opacity: 0.55; }
+}
+@keyframes lineFade {
+  0%, 100% { opacity: 0.15; }
+  50%       { opacity: 0.45; }
+}
+
+/* ─── RIGHT PANEL ────────────────────────────── */
+.rightPanel {
+  flex: 1;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 4rem;
+  position: relative;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 400px;
+}
+
+.welcomeHeading {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.welcomeSub {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* ─── FORM FIELDS ────────────────────────────── */
+.formGroup {
+  margin-bottom: 1.2rem;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.01em;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.75rem 0.9rem 0.75rem 2.6rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: #f8fafc;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+  outline: none;
+}
+
+.formInput::placeholder {
+  color: var(--text-muted);
+}
+
+.formInput:focus {
+  border-color: var(--border-focus);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.eyeButton {
+  position: absolute;
+  right: 0.85rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.2rem;
+  transition: color var(--transition);
+}
+.eyeButton:hover { color: var(--accent); }
+
+/* ─── CHECKBOX ROW ───────────────────────────── */
+.checkRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.checkLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.checkLabel input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.forgotLink {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.forgotLink:hover { color: var(--accent-hover); text-decoration: none; }
+
+/* ─── SIGN IN BUTTON ─────────────────────────── */
+.signInBtn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--primary-dark);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background var(--transition), transform 0.1s ease, box-shadow var(--transition);
+  box-shadow: 0 4px 14px rgba(13, 35, 71, 0.35);
+}
+
+.signInBtn:hover {
+  background: var(--primary-light);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  transform: translateY(-1px);
+}
+
+.signInBtn:active {
+  transform: translateY(0);
+}
+
+.btnArrow {
+  font-size: 1.1rem;
+  transition: transform var(--transition);
+}
+.signInBtn:hover .btnArrow {
+  transform: translateX(3px);
+}
+
+/* Loading spinner inside button */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── HELP TEXT ──────────────────────────────── */
+.helpText {
+  text-align: center;
+  margin-top: 1.6rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.helpText a {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.helpText a:hover { text-decoration: underline; }
+
+/* ─── ERROR MESSAGE ──────────────────────────── */
+.errorMsg {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: var(--danger);
+  font-size: 0.82rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ─── FOOTER ─────────────────────────────────── */
+.footer {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 900px) {
+  .loginWrapper { flex-direction: column; }
+  .leftPanel { width: 100%; min-height: 220px; padding: 2rem; }
+  .networkCard { display: none; }
+  .rightPanel { padding: 2.5rem 1.5rem; }
+  .footer { position: static; margin-top: 2rem; }
+}
